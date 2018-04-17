@@ -2,6 +2,7 @@ package com.example.demo.entities;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDate;
 import java.util.Date;
 
 @Entity
@@ -11,8 +12,7 @@ public class Stagiaire implements Serializable {
     private Long id;
     private String nom;
     private String prenom;
-    @Temporal(TemporalType.DATE)
-    private Date dateNaissance;
+    private LocalDate dateNaissance;
     private String email;
     private long tel;
     private long telurgence;
@@ -21,10 +21,8 @@ public class Stagiaire implements Serializable {
     private String filiere;
     private String niveau;
     private String typedestage;
-    @Temporal(TemporalType.DATE)
-    private Date datedebut;
-    @Temporal(TemporalType.DATE)
-    private Date datefin;
+    private LocalDate datedebut;
+    private LocalDate datefin;
     private String adresse;
     private String mobilite;
     private boolean etatdemande;
@@ -32,7 +30,7 @@ public class Stagiaire implements Serializable {
     private String justifabsence;
 
 
-    public Stagiaire(String nom, String prenom, Date dateNaissance, String email, long tel, long telurgence, String photo, String ecole, String filiere, String niveau, String typedestage, Date datedebut, Date datefin, String adresse, String mobilite, boolean etatdemande, String motifdesistement, String justifabsence) {
+    public Stagiaire(String nom, String prenom, LocalDate dateNaissance, String email, long tel, long telurgence, String photo, String ecole, String filiere, String niveau, String typedestage, LocalDate datedebut, LocalDate datefin, String adresse, String mobilite, boolean etatdemande, String motifdesistement, String justifabsence) {
 
         this.nom = nom;
         this.prenom = prenom;
@@ -83,11 +81,11 @@ public class Stagiaire implements Serializable {
         this.prenom = prenom;
     }
 
-    public Date getDateNaissance() {
+    public LocalDate getDateNaissance() {
         return dateNaissance;
     }
 
-    public void setDateNaissance(Date dateNaissance) {
+    public void setDateNaissance(LocalDate dateNaissance) {
         this.dateNaissance = dateNaissance;
     }
 
@@ -155,19 +153,19 @@ public class Stagiaire implements Serializable {
         this.typedestage = typedestage;
     }
 
-    public Date getDatedebut() {
+    public LocalDate getDatedebut() {
         return datedebut;
     }
 
-    public void setDatedebut(Date datedebut) {
+    public void setDatedebut(LocalDate datedebut) {
         this.datedebut = datedebut;
     }
 
-    public Date getDatefin() {
+    public LocalDate getDatefin() {
         return datefin;
     }
 
-    public void setDatefin(Date datefin) {
+    public void setDatefin(LocalDate datefin) {
         this.datefin = datefin;
     }
 

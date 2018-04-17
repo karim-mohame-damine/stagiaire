@@ -12,12 +12,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 @CrossOrigin("*")
 @RepositoryRestResource
 public interface StagiaireRepository extends JpaRepository<Stagiaire, Long> {
-
-    public Page<Stagiaire> findByNomContains(String mc, Pageable pageable);
-
-
-    public Page<Stagiaire> findByMobiliteContains(String mc, Pageable pageable);
-
-
+    Page<Stagiaire> findByNomContains(String mc, Pageable pageable);
+    Page<Stagiaire> findByMobiliteContains(String mc, Pageable pageable);
 }
-
